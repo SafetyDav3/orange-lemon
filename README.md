@@ -8,4 +8,4 @@
 
 * Whiteboard one ![Whiteboard of project](./Develop/assets/imgs/whiteboard1.jpg)
 * Whiteboard two ![Whiteboard of project paths](./Develop/assets/imgs/whiteboard2.jpg)
-* Whiteboard two ![Sample of generated password](./Develop/assets/imgs/screenshot.png)
+* Password Sample ![Sample of generated password](./Develop/assets/imgs/screenshot.png)
