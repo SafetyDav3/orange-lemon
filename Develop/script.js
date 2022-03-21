@@ -73,7 +73,6 @@ var generatedPassword = "";
 
 var generatePassword = function () {
   // ↓↓↓ User input / prompts ↓↓↓
-
   // →→→ Getting desired password length ←←←
   var getPassLength = function () {
     var userPassLength = window.prompt(
@@ -113,12 +112,21 @@ var generatePassword = function () {
       passwordAry = passwordAry.concat(specialCharsList);
     }
   };
+
+  var getLowerUse = function () {
+    var userLower = confirm(
+      "Would you like to use lowercase characters in your password?"
+    );
+    if (userLower == true) {
+      passwordAry = passwordAry.concat(alphaSmall);
+    }
+  };
+
   // ↑↑↑ User input complete ↑↑↑
 
   // ↓↓↓ Password generation ↓↓↓
 
   var generatePass = function () {
-    passwordAry = passwordAry.concat(alphaSmall);
     for (let i = 1; i <= passLength; i++) {
       generatedPasswordItems.push(
         passwordAry[Math.floor(Math.random() * passwordAry.length)]
@@ -128,17 +136,12 @@ var generatePassword = function () {
 
   // ↓↓↓ Calling functions ↓↓↓
   getPassLength();
-  console.log(passLength);
   getUpperUse();
-  console.log(passwordAry);
   getNumberUse();
-  console.log(passwordAry);
   getSpecCharUse();
-  console.log(passwordAry);
+  getLowerUse();
   generatePass();
-  console.log(generatedPasswordItems);
   // ↓↓↓ This is the password! ↓↓↓
-  console.log(generatedPasswordItems.join(""));
 
   password = generatedPasswordItems.join("");
 
@@ -153,9 +156,15 @@ function writePassword() {
   var password = generatePassword();
 
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 }
 
+// function clearDocument() {
+//   var clearDoc = document.getElementById("#password");
+
+//   clearDoc.value = "";
+// }
+
 // Add event listener to generate button
+
 generateBtn.addEventListener("click", writePassword);
