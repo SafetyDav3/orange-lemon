@@ -68,6 +68,7 @@ var useSpecialChars = false;
 
 // →→→ Array to receive other arrays to generate password from ←←←
 var passwordAry = [];
+var generatedPasswordItems = [];
 
 // →→→ Empty string to hold generated password ←←←
 var generatedPassword = "";
@@ -112,6 +113,18 @@ var getSpecCharUse = function () {
     passwordAry = passwordAry.concat(specialCharsList);
   }
 };
+// ↑↑↑ User input complete ↑↑↑
+
+// ↓↓↓ Password generation ↓↓↓
+
+var generatePassword = function () {
+  passwordAry = passwordAry.concat(alphaSmall);
+  for (let i = 1; i <= passLength; i++) {
+    generatedPasswordItems.push(
+      passwordAry[Math.floor(Math.random() * passwordAry.length)]
+    );
+  }
+};
 
 // ↓↓↓ Calling functions ↓↓↓
 getPassLength();
@@ -122,6 +135,9 @@ getNumberUse();
 console.log(passwordAry);
 getSpecCharUse();
 console.log(passwordAry);
+generatePassword();
+console.log(generatedPasswordItems);
+console.log(generatedPasswordItems.join(""));
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
