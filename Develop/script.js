@@ -159,12 +159,8 @@ function writePassword() {
   passwordText.value = password;
 }
 
-// function clearDocument() {
-//   var clearDoc = document.getElementById("#password");
-
-//   clearDoc.value = "";
-// }
-
 // Add event listener to generate button
 
 generateBtn.addEventListener("click", writePassword);
+
+// ↓↓↓ I would like to use jquery here to remove the text field on repress of the button. ↓↓↓
